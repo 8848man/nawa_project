@@ -38,8 +38,7 @@ dependencies:
   table_calendar: ^3.0.7
   provider: ^6.0.3
   shared_preferences: ^2.0.15
-  flutter_gif: any
-  flutter_gifimage: ^1.0.1
+  flutter_gif: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -93,6 +92,11 @@ flutter:
     - assets/answer_wrong.jpg
     - assets/answer_wrong_button.png
     - assets/boom.gif
+    - assets/mix_potion.jpg
+    - assets/witch_page1.jpg
+    - assets/witch_page2.jpg
+    - assets/witch_page3.jpg
+    - assets/witch_page4.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

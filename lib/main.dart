@@ -1,6 +1,7 @@
 // Copyright 2019 Aleksander Woźniak
 // SPDX-License-Identifier: Apache-2.0
 
+import 'package:calendartest/pages/quizs_sub_page/quiz_integ_page.dart';
 import 'package:calendartest/service/token_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -38,7 +39,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color(0x00000000),
       ),
-      home: StartPage(),
+      initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => new StartPage(),
+        '/WrongAnswer': (BuildContext context) => new WrongAnswer(),
+        '/WinThisGame': (BuildContext context) => new WinThisGame(),
+      },
     );
   }
 }
@@ -88,10 +94,8 @@ class _StartPageState extends State<StartPage> {
                       ),
                       IconButton(
                         iconSize: MediaQuery.of(context).size.width * 0.33,
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => WinThisGame()),
-                        ),
+                        onPressed: () =>
+                            Navigator.of(context).pushNamed('/WinThisGame'),
                         icon: Image.asset(
                           'assets/start_button.png',
                         ),
